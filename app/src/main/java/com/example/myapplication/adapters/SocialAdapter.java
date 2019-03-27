@@ -19,7 +19,7 @@ import java.util.List;
 
 public class SocialAdapter extends ArrayAdapter<SocialItem> {
 
-    List<SocialItem> items ;
+    List<SocialItem> items;
     Activity context;
 
     public SocialAdapter(@NonNull Activity context, @NonNull List<SocialItem> objects) {
@@ -28,41 +28,35 @@ public class SocialAdapter extends ArrayAdapter<SocialItem> {
         this.context = context;
     }
 
-    ;
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        //    return super.getView(position, convertView, parent);
         LayoutInflater inflater = context.getLayoutInflater();
-        View v = inflater.inflate(R.layout.social_item_view, parent, false); // Attach to root means parent also knows on clicking the child
+        View v = inflater.inflate(R.layout.social_item_view, parent, false);
 
         TextView name = v.findViewById(R.id.name);
         TextView desc = v.findViewById(R.id.description);
-        TextView type = v.findViewById(R.id.type);
         ImageView icon = v.findViewById(R.id.app_icon);
 
-        SocialItem item = items.get(position);
+
+        final SocialItem item = items.get(position);
 
         name.setText(item.getName());
-        type.setText(item.getType());
-        desc.setText(item.getDescription());
+        desc.setText(item.getDesc());
         icon.setImageResource(item.getImage_resource_id());
 
         Typeface medium = Typeface.createFromAsset(context.getAssets(), "fonts/medium.ttf");
 
-
         name.setTypeface(medium);
         desc.setTypeface(medium);
-
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, ((TextView) v.findViewById(R.id.name)).getText(), Toast.LENGTH_LONG).show();
-                ;
             }
         });
+
         return v;
     }
 }

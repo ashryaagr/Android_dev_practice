@@ -11,27 +11,24 @@ import java.util.ArrayList;
 
 public class ConstraintActivity extends AppCompatActivity {
     ArrayList<SocialItem> items;
-    //SharedPreferences preferences ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_constraint);
-        /*preferences = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("username", "ashryaagr");
-        editor.putString("password", "helloworld");
-        editor.apply();*/
 
         items = new ArrayList<>();
 
-        SocialItem facebook = new SocialItem("facebook", "social app", "yolo desc", R.drawable.facebook) ;
-        SocialItem twitter = new SocialItem("twitter", "social app", "yolo desc", R.drawable.twitter) ;
-        ListView appList = findViewById(R.id.app_list) ;
+        SocialItem twitter = new SocialItem("Twitter", "Social App", "Yolo description", R.drawable.twitter);
+        SocialItem facebook = new SocialItem("Facebook", "Social App", "Some description", R.drawable.facebook);
 
-        items.add(facebook);
+        ListView appList = findViewById(R.id.app_list);
+
         items.add(twitter);
+        items.add(facebook);
 
         SocialAdapter adapter = new SocialAdapter(this, items);
         appList.setAdapter(adapter);
+
     }
 }
