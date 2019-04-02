@@ -1,4 +1,4 @@
-package com.example.myapplication.adapters;
+package com.example.sammy1997.androidcsdcourse.adapters;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -8,17 +8,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.myapplication.R;
-import com.example.myapplication.models.SocialItem;
+import com.example.sammy1997.R;
+import com.example.sammy1997.androidcsdcourse.models.SocialItem;
 
 import java.util.List;
+
+/**
+ * Created by sammy1997 on 23/3/19.
+ */
 
 public class RecyclerviewCustomAdapter extends RecyclerView.Adapter<RecyclerviewCustomAdapter.ViewHolder> {
 
     List<SocialItem> items;
     Activity context;
 
-    RecyclerviewCustomAdapter(Activity context, List<SocialItem> items) {
+    public RecyclerviewCustomAdapter(Activity context, List<SocialItem> items){
         this.items = items;
         this.context = context;
     }
@@ -27,14 +31,20 @@ public class RecyclerviewCustomAdapter extends RecyclerView.Adapter<Recyclerview
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //        Inflate view and create ViewHolder
         LayoutInflater inflater = context.getLayoutInflater();
-        View v = inflater.inflate();
-        return;
+        View v=inflater.inflate(R.layout.social_item_view, parent, false);
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
     }
 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 //        Use holder to bind values
+        SocialItem item = items.get(position);
+        holder.type.setText(item.getType());
+        holder.name.setText(item.getName());
+        holder.desc.setText(item.getDesc());
+        holder.icon.setImageResource(item.getImage_resource_id());
     }
 
     @Override
@@ -44,7 +54,8 @@ public class RecyclerviewCustomAdapter extends RecyclerView.Adapter<Recyclerview
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView name;
         TextView desc;
         TextView type;
@@ -54,6 +65,7 @@ public class RecyclerviewCustomAdapter extends RecyclerView.Adapter<Recyclerview
             name = v.findViewById(R.id.name);
             desc = v.findViewById(R.id.description);
             icon = v.findViewById(R.id.app_icon);
+            type = v.findViewById(R.id.type);
         }
     }
 }

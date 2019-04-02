@@ -1,15 +1,18 @@
-package com.example.myapplication;
+package com.example.sammy1997.androidcsdcourse;
 
 import android.app.Activity;
-import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.myapplication.fragments.BlankFragment;
+import com.example.sammy1997.R;
+import com.example.sammy1997.androidcsdcourse.fragments.BlankFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Activity activity;
     Button button2;
     Button button3;

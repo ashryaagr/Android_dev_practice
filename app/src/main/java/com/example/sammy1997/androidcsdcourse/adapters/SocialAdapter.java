@@ -1,6 +1,7 @@
-package com.example.myapplication.adapters;
+package com.example.sammy1997.androidcsdcourse.adapters;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.R;
-import com.example.myapplication.models.SocialItem;
+import com.example.sammy1997.R;
+import com.example.sammy1997.androidcsdcourse.models.SocialItem;
 
 import java.util.List;
+
+/**
+ * Created by sammy1997 on 5/3/19.
+ */
 
 public class SocialAdapter extends ArrayAdapter<SocialItem> {
 
@@ -39,7 +44,7 @@ public class SocialAdapter extends ArrayAdapter<SocialItem> {
         ImageView icon = v.findViewById(R.id.app_icon);
 
 
-        final SocialItem item = items.get(position);
+        final SocialItem item =items.get(position);
 
         name.setText(item.getName());
         desc.setText(item.getDesc());
@@ -53,7 +58,7 @@ public class SocialAdapter extends ArrayAdapter<SocialItem> {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, ((TextView) v.findViewById(R.id.name)).getText(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, ((TextView)v.findViewById(R.id.name)).getText(), Toast.LENGTH_LONG).show();
             }
         });
 

@@ -1,12 +1,15 @@
-package com.example.myapplication;
+package com.example.sammy1997.androidcsdcourse;
 
-import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.myapplication.adapters.SocialAdapter;
-import com.example.myapplication.models.SocialItem;
-
+import com.example.sammy1997.androidcsdcourse.adapters.CustomListAdapter;
+import com.example.sammy1997.androidcsdcourse.adapters.SocialAdapter;
+import com.example.sammy1997.androidcsdcourse.models.Item;
+import com.example.sammy1997.androidcsdcourse.models.SocialItem;
+import com.example.sammy1997.R;
 import java.util.ArrayList;
 
 public class ConstraintActivity extends AppCompatActivity {

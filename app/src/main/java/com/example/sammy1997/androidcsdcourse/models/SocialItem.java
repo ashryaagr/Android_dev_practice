@@ -1,4 +1,4 @@
-package com.example.myapplication.models;
+package com.example.sammy1997.androidcsdcourse.models;
 
 /**
  * Created by sammy1997 on 5/3/19.

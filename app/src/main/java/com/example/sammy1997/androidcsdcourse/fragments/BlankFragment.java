@@ -1,4 +1,4 @@
-package com.example.myapplication.fragments;
+package com.example.sammy1997.androidcsdcourse.fragments;
 
 
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.myapplication.R;
+import com.example.sammy1997.R;
 
 public class BlankFragment extends Fragment {
 
@@ -33,8 +33,8 @@ public class BlankFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_blank, container, false);
-        ImageView icon = v.findViewById(R.id.icon);
-        Button click = v.findViewById(R.id.click);
+        ImageView icon=v.findViewById(R.id.icon);
+        Button click=v.findViewById(R.id.click);
 
         // Getting context
         Context context = getContext();
