@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         facebook2 = findViewById(R.id.facebook) ;
         twitter = findViewById(R.id.twitter) ;
 
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment, "tag");
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment); //Removed the tag of the fragment as it was creating error
         Button start = findViewById(R.id.start_service) ;
         Button stop = findViewById(R.id.stop_service) ;
         start.setOnClickListener(this);

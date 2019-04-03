@@ -16,16 +16,16 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".androidcsdcourse.MenuActivity" />
+        <activity android:name=".androidcsdcourse.MenuActivity" >
+        </activity>
         <activity android:name=".androidcsdcourse.ConstraintActivity" />
         <activity android:name=".androidcsdcourse.NextActivity" />
         <activity
             android:name=".androidcsdcourse.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
