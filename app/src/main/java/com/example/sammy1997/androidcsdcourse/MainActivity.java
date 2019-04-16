@@ -33,6 +33,8 @@ import org.json.JSONObject;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Activity activity;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Fabric.with(this, new Crashlytics());
         super.onCreate(savedInstanceState);
         activity = this;
         setContentView(R.layout.activity_main);

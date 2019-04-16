@@ -35,6 +35,9 @@
             android:name=".androidcsdcourse.MainActivity"
             android:label="@string/app_name">
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a048fd209b5d886e2611373c4d258e8a77ea4030" />
     </application>
 
 </manifest>
